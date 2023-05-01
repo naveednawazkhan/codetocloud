@@ -111,6 +111,9 @@ resource "aws_elasticsearch_domain" "elastic"{
         ]
     }
     POLICY
+  log_publishing_options {
+    cloudwatch_log_group_arn = "CKV_ANY"
+  }
 }
 
 resource "aws_elasticsearch_domain_saml_options" "example" {
