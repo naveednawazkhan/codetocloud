@@ -111,8 +111,8 @@ resource "aws_elasticsearch_domain" "elastic"{
         ]
     }
     POLICY
-  log_publishing_options {
-    cloudwatch_log_group_arn = "CKV_ANY"
+  domain_endpoint_options {
+    tls_security_policy = "Policy-Min-TLS-1-2-2019-07"
   }
 }
 
