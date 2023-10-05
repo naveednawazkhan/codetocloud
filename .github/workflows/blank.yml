@@ -1,11 +1,17 @@
+name: Prisma Cloud IaC Scan
+on:
+workflow_dispatch:
+jobs:
+prisma_cloud_iac_scan:
+runs-on: [self-hosted, ubuntu-latest]
+name: Run Prisma Cloud IaC scan to check CloudFormation templates
 steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Run Prisma Cloud 
-        id: prisma-cloud
-        uses: bridgecrewio/checkov-action@master 
-        env:
-          PRISMA_API_URL: https://api3.prismacloud.io
-        with:
-          api-key: ${{ secrets.BC_API_KEY }}
+- name: Checkout repo
+uses: actions/checkout@v2
+- name: Run Bridgecrew
+id: Bridgecrew
+uses: bridgecrewio/bridgecrew-action@master
+env:
+PRISMA_API_URL: https://api3.prismacloud.io
+with:
+api-key: ${{ secrets.BC_API_KEY }}
