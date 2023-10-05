@@ -24,7 +24,7 @@ jobs:
 steps:
   - name: Checkout repo
     uses: actions/checkout@v2
-  - name: Run Prisma Cloud
+  - name: Run Prisma Cloud NAVEED
     id: prisma-cloud
     uses: bridgecrewio/checkov-action@master
     env:
