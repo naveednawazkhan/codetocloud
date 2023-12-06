@@ -1,5 +1,5 @@
-name: GitHub Actions Demo1
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: GitHub Actions Demo2
+run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Prisma Cloud 
-        id: prisma-cloud
+        id: Prisma Cloud
         uses: bridgecrewio/checkov-action@master 
         env:
           PRISMA_API_URL: https://api2.prismacloud.io
