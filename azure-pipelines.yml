@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Python 3.8'
 - script: pip install checkov
   displayName: 'Install Checkov'
-- script: checkov -d <directory> --bc-api-key e516a5ad-1eb5-4de3-bcdf-0474a8e6f749::renxpITXZWmrVRqdmbIWTn9nlqQ= --branch main
+- script: checkov -d . --bc-api-key e516a5ad-1eb5-4de3-bcdf-0474a8e6f749::renxpITXZWmrVRqdmbIWTn9nlqQ= --branch main
   displayName: 'Scan with Prisma Cloud'
   env:
     PRISMA_API_URL: https://api3.prismacloud.io
