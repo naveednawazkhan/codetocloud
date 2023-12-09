@@ -14,12 +14,6 @@ jobs:
 - job: Prisma_Cloud_Job
   displayName: Prisma Cloud Job
   steps:
-  - task: AzureKeyVault@2
-    inputs:
-      azureSubscription: 'pipeline-connection'
-      keyVaultName: 'pipeline-vault'
-      secretsFilter: '*'
-      runAsPreJob: false
   - task: UsePythonVersion@0
     inputs:
       versionSpec: 3.8
