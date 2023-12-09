@@ -1,0 +1,38 @@
+trigger:
+- main
+
+pr:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  PRISMA_API_URL: https://api3.prismacloud.io
+
+jobs:
+- job: Prisma_Cloud_Job
+  displayName: Prisma Cloud Job
+  steps:
+  - task: AzureKeyVault@2
+    inputs:
+      azureSubscription: 'pipeline-connection'
+      keyVaultName: 'pipeline-vault'
+      secretsFilter: '*'
+      runAsPreJob: false
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: 3.8
+    displayName: 'Use Python 3.8'
+  - script: pip install checkov
+    displayName: Install Checkov
+  - script: checkov -d . --use-enforcement-rules --bc-api-key $(e516a5ad-1eb5-4de3-bcdf-0474a8e6f749)::$(renxpITXZWmrVRqdmbIWTn9nlqQ=) --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
+    workingDirectory: $(System.DefaultWorkingDirectory)
+    displayName: Run Checkov
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/CheckovReport.xml'
+      testRunTitle: PrismaCloudTests
+    displayName: Publish Test Results
+    condition: always()
