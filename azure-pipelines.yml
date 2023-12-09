@@ -10,10 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.8'
+  displayName: 'Install Python 3.8'
+- script: pip install checkov
+  displayName: 'Install Checkov'
+- script: checkov -d <directory> --bc-api-key <prisma_access_key>::<prisma_secret_key> --repo-id <org/repo> --branch <branch>
+  displayName: 'Scan with Prisma Cloud'
+  env:
+    PRISMA_API_URL: <prisma_stack_api>
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
