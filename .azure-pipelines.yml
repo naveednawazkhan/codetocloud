@@ -20,7 +20,7 @@ jobs:
     displayName: 'Use Python 3.8'
   - script: pip install checkov
     displayName: Install Checkov
-  - script: checkov -d . --use-enforcement-rules --bc-api-key e516a5ad-1eb5-4de3-bcdf-0474a8e6f749::renxpITXZWmrVRqdmbIWTn9nlqQ= --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
+  - script: checkov -d . --use-enforcement-rules --bc-api-key key --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
     workingDirectory: $(System.DefaultWorkingDirectory)
     displayName: Run Checkov
   - task: PublishTestResults@2
