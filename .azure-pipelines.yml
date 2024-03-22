@@ -1,32 +1,16 @@
 trigger:
-- main
-
-pr:
-- main
+- master
 
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  PRISMA_API_URL: $(PRISMA_API_URL)
-
-jobs:
-- job: Prisma_Cloud_Job
-  displayName: Prisma Cloud Job
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: 3.8
-    displayName: 'Use Python 3.8'
-  - script: pip install checkov
-    displayName: Install Checkov
-  - script: checkov -d . --use-enforcement-rules --bc-api-key $(PRISMA_API_KEY) --repo-id prismaiac/bicepgoat --branch main -o cli -o junitxml --output-file-path console,CheckovReport.xml
-    workingDirectory: $(System.DefaultWorkingDirectory)
-    displayName: Run Checkov
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: '**/CheckovReport.xml'
-      testRunTitle: PrismaCloudTests
-    displayName: Publish Test Results
-    condition: always()
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.8'
+  displayName: 'Install Python 3.8'
+- script: pip install checkov
+  displayName: 'Installing Prisma Cloud Code Security'
+- script: |
+    checkov --prisma-api-url $(PRISMA_API_URL) --bc-api-key $(PRISMA_API_KEY) -d . --repo-id $(System.TeamProject)/$(Build.Repository.Name) --branch $(Build.SourceBranchName) --compact --quiet --soft-fail
+  displayName: 'Scan Repo with Prisma Cloud'
