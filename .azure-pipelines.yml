@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  PRISMA_API_URL: https://api3.prismacloud.io
+  PRISMA_API_URL: $(PRISMA_API_URL)
 
 jobs:
 - job: Prisma_Cloud_Job
