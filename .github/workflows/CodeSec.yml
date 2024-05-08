@@ -1,18 +1,24 @@
-name: GitHub Actions Demo2
-run-name: ${{ github.actor }} is testing out GitHub Actions
-on: [push]
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+name: Checkov Checks on Terraform Code
 
-      - name: Run Prisma Cloud 
-        id: prisma-cloud
-        uses: bridgecrewio/checkov-action@master 
-        env:
-          PRISMA_API_URL: https://api3.prismacloud.io
-        with:
-          log_level: DEBUG
-          api-key: ${{ secrets.BC_API_KEY }}
+# Only trigger, when the build workflow succeeded
+on:
+  workflow_run:
+    workflows: ["Tfsec Checks on Terraform Code"]
+    types:
+      - completed
+      
+permissions: read-all
+      
+jobs:
+  checkov-checks:
+      runs-on: ubuntu-latest
+      steps:
+      
+ # Checkout Repository
+      - name : Check out Git Repository
+        uses: actions/checkout@v2
+      
+# Checkov - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code
+      - name: Run Checkov
+        run: |
+           docker run -t -v ${{ github.workspace }}:/tf --workdir /tf bridgecrew/checkov --directory /tf
