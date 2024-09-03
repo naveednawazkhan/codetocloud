@@ -1,0 +1,37 @@
+2024-08-29 16:16:00 [info]: customer is not supporting SAST 
+2024-08-29 16:16:01 [info]: Fetched new JWT token successfully 
+2024-08-29 16:16:02 [info]: get customer modules response data:  {"data":{"modules":{"IAC":true,"SCA":false,"CICD":false,"SECRETS":false,"SAST":false}}}
+2024-08-29 16:16:02 [info]: customer is not supporting SAST 
+2024-08-29 16:16:02 [info]: Installing Checkov with Docker 
+2024-08-29 16:16:53 [info]: Successfully installed Checkov using docker {"type":"docker","entrypoint":"docker"}
+2024-08-30 09:06:33 [info]: proxy settings: "" 
+2024-08-30 09:06:33 [info]: docker run --rm --tty --name vscode-checkov-1725026793251 --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.19 --env PRISMA_API_URL=https://api3.prismacloud.io --volume "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform":"/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" --workdir "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" bridgecrew/checkov:latest --repo-id vscode/extension --quiet --soft-fail --output json --bc-api-key  --file "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform/terraform.tfstate.backup" 
+2024-08-30 09:06:40 [info]: Full error checkov process output: 
+no errors 
+2024-08-30 09:06:40 [info]: The Checkov execution was failed due to: The Checkov execution exited with code 2 
+2024-08-30 09:06:40 [info]: Got 403 for analytics, refreshing JWT token 
+2024-08-30 09:06:41 [info]: Fetched new JWT token successfully 
+2024-08-30 09:06:42 [info]: Sent analytics successfully 
+2024-08-30 13:31:15 [info]: proxy settings: "" 
+2024-08-30 13:31:15 [info]: docker run --rm --tty --name vscode-checkov-1725042675978 --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.19 --env PRISMA_API_URL=https://api3.prismacloud.io --volume "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform":"/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" --workdir "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" bridgecrew/checkov:latest --repo-id vscode/extension --quiet --soft-fail --output json --bc-api-key  --file "/Users/nnawaz/Library/Application Support/Code/logs/20240829T161558/window1/exthost/PrismaCloud.prisma-cloud/prisma.log" 
+2024-08-30 13:31:23 [info]: Full error checkov process output: 
+no errors 
+2024-08-30 13:31:23 [info]: The Checkov execution was failed due to: The Checkov execution exited with code 2 
+2024-08-30 13:31:23 [info]: Got 403 for analytics, refreshing JWT token 
+2024-08-30 13:31:23 [info]: Fetched new JWT token successfully 
+2024-08-30 13:31:25 [info]: Sent analytics successfully 
+2024-08-30 13:42:52 [info]: proxy settings: "" 
+2024-08-30 13:42:52 [info]: docker run --rm --tty --name vscode-checkov-1725043372639 --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.19 --env PRISMA_API_URL=https://api3.prismacloud.io --volume "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform":"/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" --workdir "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" bridgecrew/checkov:latest --repo-id vscode/extension --quiet --soft-fail --output json --bc-api-key  --file "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform/Dockerfile" 
+2024-08-30 13:42:58 [info]: Got 403 for analytics, refreshing JWT token 
+2024-08-30 13:42:59 [info]: Fetched new JWT token successfully 
+2024-08-30 13:43:00 [info]: Sent analytics successfully 
+2024-08-30 13:44:51 [info]: proxy settings: "" 
+2024-08-30 13:44:51 [info]: docker run --rm --tty --name vscode-checkov-1725043491381 --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.19 --env PRISMA_API_URL=https://api3.prismacloud.io --volume "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform":"/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" --workdir "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" bridgecrew/checkov:latest --repo-id vscode/extension --quiet --soft-fail --output json --bc-api-key  --file "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform/.prismacloud_auth.json" 
+2024-08-30 15:31:45 [info]: proxy settings: "" 
+2024-08-30 15:31:45 [info]: docker run --rm --tty --name vscode-checkov-1725049905346 --env BC_SOURCE=vscode --env BC_SOURCE_VERSION=1.0.19 --env PRISMA_API_URL=https://api3.prismacloud.io --volume "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform":"/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" --workdir "/Users/nnawaz/Documents/terraform/PrismaCloudTerraform" bridgecrew/checkov:latest --repo-id vscode/extension --quiet --soft-fail --output json --bc-api-key  --file "/Users/nnawaz/Library/Application Support/Code/logs/20240829T161558/window1/exthost/PrismaCloud.prisma-cloud/prisma.log" 
+2024-08-30 15:31:50 [info]: Full error checkov process output: 
+no errors 
+2024-08-30 15:31:50 [info]: The Checkov execution was failed due to: The Checkov execution exited with code 2 
+2024-08-30 15:31:51 [info]: Got 403 for analytics, refreshing JWT token 
+2024-08-30 15:31:51 [info]: Fetched new JWT token successfully 
+2024-08-30 15:31:52 [info]: Sent analytics successfully 
