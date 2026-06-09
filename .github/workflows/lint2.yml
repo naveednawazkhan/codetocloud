@@ -7,7 +7,7 @@ on:
     types:
       - completed
       
-permissions: read-all
+permissions: write-all
 
 jobs:
   tfsec-checks:
